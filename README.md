@@ -16,7 +16,8 @@ Download SWIG from [http://www.swig.org/]()
     tar -zxf swig*.gz  #extract swig
     cd swig*
 
-Patch the configure script, configure and make:
+A patch is required. I've added the patch to the repository under [swigpatch](https://github.com/bdwong/firstextension/blob/master/swigpatch/configure.patch).
+Copy the patch to the swig source folder, patch the configure script, configure and make:
 
     patch -p0 <./configure.patch
     ./configure

@@ -1,0 +1,30 @@
+--- configure	2011-02-20 12:24:48.000000000 -0800
++++ configure.mine	2011-03-29 15:46:00.000000000 -0700
+@@ -8654,15 +8654,20 @@
+ 	RUBYDIR=`($RUBY -rmkmf -e 'print Config::CONFIG["archdir"] || $archdir') 2>/dev/null`
+ 	if test x"$RUBYDIR" != x""; then
+-		dirs="$RUBYDIR"
+-		RUBYINCLUDE=none
++		# dirs for rvm
++		dirs="`cd $MY_RUBY_HOME/include/*/*/ruby/..;pwd` `cd $MY_RUBY_HOME/include/*;pwd`"
++		RUBYINCLUDE=""
++		# Some archs need more than one include directory.
++		ALLINCLUDE=""
+ 		for i in $dirs; do
+ 			if test -r $i/ruby.h; then
+-				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $i" >&5
+-$as_echo "$i" >&6; }
+-				RUBYINCLUDE="-I$i"
+-				break;
++				RUBYINCLUDE="$RUBYINCLUDE -I$i"
+ 			fi
++		ALLINCLUDE="$ALLINCLUDE -I$i"
+ 		done
+-		if test "$RUBYINCLUDE" = none; then
++		if test -n "$RUBYINCLUDE"; then
++			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $i" >&5
++$as_echo "$i" >&6; }
++			RUBYINCLUDE="$ALLINCLUDE"
++		else
+ 			RUBYINCLUDE="-I$RUBYDIR"
+ 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: could not locate ruby.h...using $RUBYINCLUDE" >&5
