@@ -70,6 +70,7 @@ Other notes
 
 If you are creating your own Makefile, use these includes when building your extension,
 however note you do not need to do this if you use extconf.rb.
-# RUBYINCLUDES="-I`cd $MY_RUBY_HOME/include/*/*/ruby/..;pwd` -I`cd $MY_RUBY_HOME/include/*;pwd`"
-# LDFLAGS=-L$MY_RUBY_HOME/lib
-# echo "-I'`cd $MY_RUBY_HOME/include/*/*/ruby/..;pwd`' -I'`cd $MY_RUBY_HOME/include/*;pwd`'"
+
+    RUBYINCLUDES="-I`cd $MY_RUBY_HOME/include/*/*/ruby/..;pwd` -I`cd $MY_RUBY_HOME/include/*;pwd`"
+    LDFLAGS=-L$MY_RUBY_HOME/lib
+    echo "-I'`cd $MY_RUBY_HOME/include/*/*/ruby/..;pwd`' -I'`cd $MY_RUBY_HOME/include/*;pwd`'"
