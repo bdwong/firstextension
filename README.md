@@ -6,12 +6,12 @@ Instructions for creating a SWIG native extension on OS 10.6:
 Download and install PCRE library (pcre-8.00-0.dmg) from Rudix.
 Download and install boost-1.43 (boost-1.43.0-0.dmg) from Rudix.
 
- * http://rudix.org/packages-abc.html
- * http://rudix.org/packages-opq.html
+ * [http://rudix.org/packages-abc.html]()
+ * [http://rudix.org/packages-opq.html]()
 
 As an alternative to Rudix, you could use another package manager like Homebrew, Macports or Fink.
 
-Download SWIG from http://www.swig.org/
+Download SWIG from [http://www.swig.org/]()
 
     tar -zxf swig*.gz  #extract swig
     cd swig*
@@ -63,7 +63,7 @@ Try running this to do the replace for you:
 
     $ sed -i -e 's/STR2CSTR/StringValuePtr/' *.cxx
 
-Source: [http://rubyforge.org/tracker/index.php?func=detail&aid=28565&group_id=285&atid=1167]
+Source: [http://rubyforge.org/tracker/index.php?func=detail&aid=28565&group_id=285&atid=1167]()
 
 Other notes
 -----------
