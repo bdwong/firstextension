@@ -66,9 +66,10 @@ Now try your extension:
     ruby :003> a.somemethod
      => "result"
 
-Notes for Ruby 1.9.2 and SWIG 2.0.2
+Notes for Ruby 1.9.2 and SWIG 1.3.31
 -----------------------------------
 
+These notes are relevant if you are using an older version of SWIG (earlier than 2.0).
 If you are passing char* string pointers around, you will get an error when you run make:
 
     error: ‘STR2CSTR’ was not declared in this scope
