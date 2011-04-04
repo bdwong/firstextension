@@ -3,6 +3,12 @@ First Extension
 
 Instructions for creating a SWIG native extension on OS 10.6:
 
+OS 10.6 has an older version of SWIG pre-installed. If you want to use the latest version,
+follow the instructions below for building it. Otherwise skip to _Building your extension_.
+
+Building SWIG on OSX
+---------------------
+
 Download and install PCRE library (pcre-8.00-0.dmg) from Rudix.
 Download and install boost-1.43 (boost-1.43.0-0.dmg) from Rudix.
 
@@ -30,6 +36,14 @@ If you want to make sure it works:
 And install:
 
     sudo make install
+
+By default, SWIG installs to /usr/bin/local. The system version of swig has precedence and lives in /usr/bin.
+To replace it:
+
+    cd /usr/bin
+    swig -version                                 # Version 1.3.31 on my mac
+    sudo mv swig swig-1.3.31
+    sudo ln -s /usr/local/bin/swig /usr/bin/swig  # Optional link to the new swig
 
 Building your extension
 -----------------------
